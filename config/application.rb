@@ -15,5 +15,9 @@ module Telemed
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # App language
+    config.i18n.default_locale = :fr
+
   end
 end
