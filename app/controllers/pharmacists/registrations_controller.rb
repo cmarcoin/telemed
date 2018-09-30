@@ -38,6 +38,10 @@ class Pharmacists::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def after_sign_in_path_for(resource)
+    pharmacists_accueil_path
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
