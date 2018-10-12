@@ -1,29 +1,13 @@
 <h2>Créer mon compte Médecin</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-inline') do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= f.input :email, autofocus: true, autocomplete: "email" %>
+  <%= f.input :password, label: 'Mot de passe', autocomplete: "new-password" %>
+  <%= f.input :password_confirmation,  label: 'Confirmation de mot de passe', autocomplete: "new-password" %>
+  <%= f.button :submit, value: "#{f.object.new_record? ? 'Valider' : 'Mettre à jour'}", class: "btn btn-primary" %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
 
 <%= render "doctors/shared/links" %>

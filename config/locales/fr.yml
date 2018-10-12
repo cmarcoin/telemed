@@ -228,12 +228,5 @@ fr:
       short: "%d %b %Hh%M"
     pm: pm
 
-  # Used to translate the declines field possibles values (decline field is an ENUM)
-  declines:
-    unavailable: "je suis indisponible"
-    lack_skills: "je ne sais pas faire"
-    client_inactive: "le client ne répond plus à mes messages"
-    other: "autre"
-
 
 
