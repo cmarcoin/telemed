@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  let addressField = document.getElementsByClassName('address-field')[0];
+  var addressField = document.getElementsByClassName('address-field')[0];
 
   if (addressField) {
-    let autocomplete = new google.maps.places.Autocomplete(addressField, {
+    var autocomplete = new google.maps.places.Autocomplete(addressField, {
       types: ["geocode"],
       componentRestrictions: {
         country: "fr"
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function onPlaceChanged() {
 
-    let place = this.getPlace();
-    let components = getAddressComponents(place);
+    var place = this.getPlace();
+    var components = getAddressComponents(place);
 
     // Need to check if this works for all pages. Might not work for pages where there are two address fields
     document.getElementById('lat').value = place.geometry.location.lat();
@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getAddressComponents(place) {
-    let lat = place.geometry.location.lat();
-    let lng = place.geometry.location.lng();
-    let street_number = null;
-    let route = null;
-    let zip_code = null;
-    let city = null;
-    let country_code = null;
-    for (let i in place.address_components) {
-      let component = place.address_components[i];
-      for (let j in component.types) {
-        let type = component.types[j];
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
+    var street_number = null;
+    var route = null;
+    var zip_code = null;
+    var city = null;
+    var country_code = null;
+    for (var i in place.address_components) {
+      var component = place.address_components[i];
+      for (var j in component.types) {
+        var type = component.types[j];
         if (type == "street_number") {
           street_number = component.long_name;
         } else if (type == "route") {
