@@ -1,10 +1,11 @@
 <p>Formulaire de création de patient</p>
 
+<!-- Form_for needs custom url otherwise Rails builds the path from the @user resource like 'users_path' which is wrong here -->
 <%= simple_form_for(@user, url: pharmacists_patients_path, class: 'form-inline') do |f| %>
 
   <%= f.input :first_name, autofocus: true %>
   <%= f.input :last_name %>
-  <%= f.input :address %>
+  <%= f.input :address, class: 'address-field' %>
   <%= f.input :email %>
   <%= f.input :phone_number %>
   <%= f.input :weight %>
