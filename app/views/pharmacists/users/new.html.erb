@@ -1,0 +1,22 @@
+<p>Formulaire de création de patient</p>
+
+<%= simple_form_for(@user, url: pharmacists_patients_path, class: 'form-inline') do |f| %>
+
+  <%= f.input :first_name, autofocus: true %>
+  <%= f.input :last_name %>
+  <%= f.input :address %>
+  <%= f.input :email %>
+  <%= f.input :phone_number %>
+  <%= f.input :weight %>
+  <%= f.input :size %>
+  <%= f.button :submit, value: "Valider", class: "btn btn-primary" %>
+
+  <!-- GOOGLE MAPS geocoding hidden fields -->
+  <input id="address_line1" name="user[address_line1]" class="form-control" type="hidden">
+  <input id="city" name="user[address_city]" class="form-control" type="hidden">
+  <input id="zip_code" name="user[address_postal_code]" class="form-control" type="hidden">
+  <input id="country" name="user[country]" class="form-control" type="hidden">
+  <input id="lat" name="user[latitude]" class="form-control" type="hidden">
+  <input id="lng" name="user[longitude]" class="form-control" type="hidden">
+
+<% end %>

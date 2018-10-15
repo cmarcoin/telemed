@@ -9,10 +9,19 @@ fr:
           has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
     attributes:
       user:
+        first_name : 'Prénom'
+        last_name : 'Nom'
+        address : 'Addresse'
+        phone_number : 'Numéro de téléphone'
+        size: 'Taille'
+        weight: 'Poids'
         current_password: 'le mot de passe actuel'
         password: 'le mot de passe'
         password_confirmation: 'La confirmation de mot de passe'
       pharmacist:
+        first_name : 'Prénom'
+        last_name : 'Nom'
+        address : 'Addresse'
         current_password: 'le mot de passe actuel'
         password: 'le mot de passe'
         password_confirmation: 'La confirmation de mot de passe'

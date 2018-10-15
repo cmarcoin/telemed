@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   namespace :pharmacists do
     get 'accueil', to: 'pages#index'
+    get 'patient/nouveau', to: 'users#new'
+    post 'patients', to: 'users#create'
+    get 'patients/:id/editer', to: 'users#edit'
+    post 'patients/:id/mettre_a_jour', to: 'users#update'
+
+
   end
-
-
-
   root to: 'pages#index'
 end

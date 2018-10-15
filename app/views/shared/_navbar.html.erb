@@ -23,9 +23,11 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
-    </form>
+    <!--   We can use one link to kill the session of each user model. See. config.sign_out_all_scopes = true -->
+    <% if user_signed_in? || doctor_signed_in? || pharmacist_signed_in? || admin_signed_in? %>
+      <form class="form-inline my-2 my-lg-0">
+        <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0'%>
+      </form>
+    <% end %>
   </div>
 </nav>
