@@ -1,0 +1,8 @@
+<p>Formulaire de création d'ordonnance</p>
+
+<!-- Form_for needs custom url otherwise Rails builds the path from the @user resource like 'users_path' which is wrong here -->
+<%= simple_form_for(@prescription, url: pharmacists_ordonnances_path, class: 'form-inline') do |f| %>
+  <%= f.select :user, collection: User.all  %>
+  <%= f.input :symptoms, label: 'Symptômes' %>
+  <%= f.button :submit, value: 'Valider', class: 'btn btn-primary' %>
+<% end %>

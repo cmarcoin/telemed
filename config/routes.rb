@@ -7,7 +7,8 @@ Rails.application.routes.draw do
                                       registrations: 'doctors/registrations' }
   devise_for :pharmacists, controllers: { sessions: 'pharmacists/sessions',
                                           registrations: 'pharmacists/registrations' }
-  devise_for :admins, controllers: { sessions: 'admins/sessions' }
+  devise_for :admins, controllers: { sessions: 'admins/sessions',
+                                      registrations: 'admins/registrations' }
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   namespace :pharmacists do
@@ -16,8 +17,10 @@ Rails.application.routes.draw do
     post 'patients', to: 'users#create'
     get 'patients/:id/editer', to: 'users#edit'
     post 'patients/:id/mettre_a_jour', to: 'users#update'
-
-
+    get 'ordonnance/nouvelle', to: 'prescriptions#new'
+    post 'ordonnances', to: 'prescriptions#create'
+    get 'ordonnances/:id/editer', to: 'prescriptions#edit'
+    post 'ordonnances/:id/mettre_a_jour', to: 'prescriptions#update'
   end
   root to: 'pages#index'
 end
