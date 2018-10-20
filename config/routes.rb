@@ -23,5 +23,10 @@ Rails.application.routes.draw do
     get 'ordonnances/:id/editer', to: 'prescriptions#edit'
     post 'ordonnances/:id/mettre_a_jour', to: 'prescriptions#update'
   end
+
+  namespace :admins do
+    get 'accueil', to: 'pages#index'
+  end
+
   root to: 'pages#index'
 end

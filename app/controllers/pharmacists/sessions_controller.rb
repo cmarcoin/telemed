@@ -19,7 +19,6 @@ class Pharmacists::SessionsController < Devise::SessionsController
   # end
 
    def after_sign_in_path_for(resource)
-    puts "On passe bien dans le callback pharmarcien"
     pharmacists_accueil_path
   end
 
