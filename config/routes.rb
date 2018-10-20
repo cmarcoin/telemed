@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/administration', as: 'rails_admin'
   # Using devise with multiple models : https://github.com/plataformatec/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
   devise_for :doctors, controllers: { sessions: 'doctors/sessions',
                                       registrations: 'doctors/registrations' }
